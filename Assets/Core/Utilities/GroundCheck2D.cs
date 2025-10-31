@@ -12,7 +12,6 @@ public class GroundCheck2D : MonoBehaviour
     {
         if (groundCheckPoint == null)
         {
-            Debug.LogWarning("GroundCheckPoint not assigned", this);
             return;
         }
 

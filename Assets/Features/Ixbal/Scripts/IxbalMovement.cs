@@ -8,12 +8,6 @@ public class IxbalMovement : Movement2D
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        
-    }
-
-    void OnJump(InputValue value)
-    {
-        Jump();
     }
 
     protected override void HandleMovement()

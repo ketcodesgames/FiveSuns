@@ -724,7 +724,7 @@ CompositeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -841,9 +841,10 @@ GameObject:
   - component: {fileID: 100156472}
   - component: {fileID: 100156471}
   - component: {fileID: 100156474}
-  - component: {fileID: 100156477}
   - component: {fileID: 100156475}
   - component: {fileID: 100156476}
+  - component: {fileID: 100156479}
+  - component: {fileID: 100156480}
   m_Layer: 9
   m_Name: Ixbal
   m_TagString: Untagged
@@ -938,7 +939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IxbalMovement
   moveSpeed: 7
-  jumpForce: 35
 --- !u!114 &100156476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614ac09c70d1118478edf942dcf2eb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IxbalController
---- !u!114 &100156477
+--- !u!114 &100156479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -968,6 +968,23 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 384
+--- !u!114 &100156480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100156470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bba219a81ab64348bf6f15f9eb04b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IxbalJump
+  jumpForce: 10
+  maxJumps: 2
+  coyoteTime: 0.15
+  jumpBufferTime: 0.1
+  variableJumpMultiplier: 0.5
 --- !u!1 &222504953
 GameObject:
   m_ObjectHideFlags: 0
