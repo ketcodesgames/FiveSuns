@@ -59,13 +59,10 @@ Assets/
  ┗ Docs/
 ```
 
-We’ll explain this below — but you won’t start with all of this.
-
 ---
 
 ## ⚙️ PHASE 1 — Start Small (Initial Setup)
 
-When you first start the project, **don’t over-engineer**.
 Start with this simplified layout and grow it later:
 
 ```
@@ -81,9 +78,7 @@ Assets/
  ┣ UI/
 ```
 
-This lets you focus on building the foundation (movement, camera, level transitions) without noise.
-
-Later (Phase 2–3), you’ll expand to the full enterprise architecture above.
+Later (Phase 2–3), expand to the full enterprise architecture above.
 
 ---
 
@@ -93,7 +88,7 @@ Later (Phase 2–3), you’ll expand to the full enterprise architecture above.
 
 ### 🧩 **Core/**
 
-**Purpose:** The backbone of your game — systems used by *everything*.
+**Purpose:** The backbone of the game — systems used by *everything*.
 Should be small, clean, and independent of gameplay specifics.
 
 **Subfolders & Examples:**
@@ -324,6 +319,3 @@ Then, as systems grow:
 → add `/Services`, `/Packages`, `/Editor`, `/Tests`, `/Docs`.
 
 ---
-
-Would you like me to show you a **ready-to-use folder setup script** (an Editor script that automatically creates all these folders in your Unity project)?
-That way, you can run it once and start clean with the exact structure.
