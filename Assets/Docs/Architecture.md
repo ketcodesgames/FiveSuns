@@ -297,25 +297,3 @@ Over time, move them into their correct `Core` or `Features` folders.
 | **DI / Service Locator**       | Modular service access      | `SaveService`, `AudioService`, etc.              |
 | **Scene Composition**          | Bootstrap + additive levels | Persistent world manager scene                   |
 | **Feature-Based Foldering**    | Scalable modularity         | `Features/Player`, `Features/Combat`             |
-
----
-
-## ✅ TL;DR — Start with this (Phase 1)
-
-```
-Assets/
- ┣ Core/
- ┣ Features/
- ┃ ┣ Player/
- ┃ ┗ Enemies/
- ┣ Scenes/
- ┣ Prefabs/
- ┣ Art/
- ┣ Audio/
- ┗ UI/
-```
-
-Then, as systems grow:
-→ add `/Services`, `/Packages`, `/Editor`, `/Tests`, `/Docs`.
-
----
