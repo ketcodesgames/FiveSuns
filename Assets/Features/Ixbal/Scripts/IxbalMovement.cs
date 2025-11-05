@@ -14,4 +14,6 @@ public class IxbalMovement : Movement2D
     {
         Move(moveInput.x);
     }
+
+    internal float InputX => moveInput.x;
 }

@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bba219a81ab64348bf6f15f9eb04b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IxbalJump
-  jumpForce: 10
+  jumpForce: 25
   maxJumps: 2
   coyoteTime: 0.15
   jumpBufferTime: 0.1
