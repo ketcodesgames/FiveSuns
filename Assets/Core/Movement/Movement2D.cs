@@ -5,8 +5,9 @@ public abstract class Movement2D : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
 
     Rigidbody2D rb;
+    Vector2 currentMoveInput = Vector2.zero;
 
-    void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -17,7 +18,20 @@ public abstract class Movement2D : MonoBehaviour
         CheckFlip();
     }
 
-    protected abstract void HandleMovement();
+    protected virtual void HandleMovement()
+    {
+        Move(currentMoveInput.x);
+    }
+
+    protected virtual void HandleMoveInputStart(Vector2 input)
+    {
+        currentMoveInput = input;
+    }
+
+    protected virtual void HandleMoveInputStop()
+    {
+        currentMoveInput = Vector2.zero;
+    }
 
     protected void Move(float horizontalInput)
     {

@@ -30,3 +30,6 @@ UserSettings/
 # Ignore Unity recovery scenes
 Assets/_Recovery/
 Assets/_Recovery.meta
+
+# GitHub Copilot
+.github/

@@ -1,19 +1,26 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class IxbalMovement : Movement2D
 {
-    Vector2 moveInput;
+    InputReader inputReader;
 
-    void OnMove(InputValue value)
+    protected override void Awake()
     {
-        moveInput = value.Get<Vector2>();
+        base.Awake();
+        inputReader = GetComponent<InputReader>();
     }
 
-    protected override void HandleMovement()
+    void OnEnable()
     {
-        Move(moveInput.x);
+        inputReader.OnMovePerformed += HandleMoveInputStart;
+        inputReader.OnMoveCanceled += HandleMoveInputStop;
     }
 
-    internal float InputX => moveInput.x;
+    void OnDisable()
+    {
+        inputReader.OnMovePerformed -= HandleMoveInputStart;
+        inputReader.OnMoveCanceled -= HandleMoveInputStop;
+    }
+
+    internal float InputX => inputReader.MoveInput.x;
 }

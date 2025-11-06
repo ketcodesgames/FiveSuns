@@ -1,24 +1,24 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class IxbalJump : Jump2D
 {
-    InputAction jumpAction;
+    InputReader inputReader;
 
     protected override void Awake()
     {
         base.Awake();
-
-        var PlayerInput = GetComponent<PlayerInput>();
-        
-        jumpAction = PlayerInput.actions["Jump"];
-        jumpAction.started += OnJump;
-        jumpAction.canceled += OnJump;
+        inputReader = GetComponent<InputReader>();
     }
 
-    void OnJump(InputAction.CallbackContext context)
+    void OnEnable()
     {
-        if (context.started) OnJumpPressed();
-        if (context.canceled) OnJumpReleased();
+        inputReader.OnJumpStarted += OnJumpPressed;
+        inputReader.OnJumpCanceled += OnJumpReleased;
+    }
+
+    void OnDisable()
+    {
+        inputReader.OnJumpStarted -= OnJumpPressed;
+        inputReader.OnJumpCanceled -= OnJumpReleased;
     }
 }

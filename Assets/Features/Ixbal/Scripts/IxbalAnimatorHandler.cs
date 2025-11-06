@@ -13,34 +13,25 @@ public class IxbalAnimatorHandler : MonoBehaviour
     {
         CharacterEvents.OnMove += HandleMove;
         CharacterEvents.OnJump += HandleJump;
-        CharacterEvents.OnLand += HandleLand;
     }
 
     void OnDisable()
     {
         CharacterEvents.OnMove -= HandleMove;
         CharacterEvents.OnJump -= HandleJump;
-        CharacterEvents.OnLand -= HandleLand;
     }
 
     void HandleMove(GameObject sender, float speed)
     {
         if (sender != gameObject) return;
 
-        animator.SetFloat("Speed", Mathf.Abs(speed));
+        animator.SetFloat(IxbalConstants.AnimationStates.Run, Mathf.Abs(speed));
     }
 
     void HandleJump(GameObject sender)
     {
         if (sender != gameObject) return;
 
-        animator.SetTrigger("Jump");
-    }
-
-    void HandleLand(GameObject sender)
-    {
-        if (sender != gameObject) return;
-
-        animator.SetTrigger("Land");
+        animator.SetTrigger(IxbalConstants.AnimationStates.Jump);
     }
 }
