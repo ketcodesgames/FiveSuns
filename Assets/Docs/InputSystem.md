@@ -142,6 +142,5 @@ Future implementation should include:
 When adding new input actions:
 
 1. Add constants to `Constants.InputActions`
-2. Create action in Input Action Asset
-3. Add events to appropriate InputReader
-4. Implement handlers in feature components
+2. Add events to appropriate InputReader
+3. Implement handlers in feature components
